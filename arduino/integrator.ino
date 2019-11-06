@@ -2,6 +2,8 @@
  * Integration over lifetime of: power
  * Uses EEPROM addresses 0,1,2,3
  */
+#include "log.h"
+
 #define POWER_ADDRESS 0 // addr 0 - 3
 #define POWER_PIN A0
 #define POWER_PRECISION 16  // 2^4 = 16 possible decimal states of the power. i.e. the value saved is 16 times bigger than the measure
@@ -30,5 +32,5 @@ void integrateStep(void) {
   // write to EEPROM
   eepromWriteLong(POWER_ADDRESS, powerAccumulate);
   
-  Serial.println(powerAccumulate / (float) POWER_PRECISION);
+  echoln(powerAccumulate / (float) POWER_PRECISION);
 }

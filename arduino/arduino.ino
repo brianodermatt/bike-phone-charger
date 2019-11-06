@@ -1,3 +1,6 @@
+/**
+ * Main module. Setup and loop function
+ */
 int sensorPin = A0;
 int integrationStep = 1000; // time in ms
 

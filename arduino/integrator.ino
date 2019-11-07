@@ -7,7 +7,7 @@
 #define POWER_ADDRESS 0 // addr 0 - 3
 #define POWER_PIN A0
 #define POWER_PRECISION 16  // 2^4 = 16 possible decimal states of the power. i.e. the value saved is 16 times bigger than the measure
-
+#define POWER_TEST_R 1  // test resistance of xx Ohm
 void resetIntegration(void) {
   eepromWriteLong(POWER_ADDRESS, 0.0);
 }
@@ -24,13 +24,17 @@ void integrateStep(void) {
   long currentPowerIntegral = eepromReadLong(POWER_ADDRESS);
 
   // read sensor
-  float powerMeasure = POWER_PRECISION * analogReadWithinRange(POWER_PIN, 0.0, 5.0);
+  // read between 0 and 5 V, P = Vdd * Ut / Rt where Ut is the measure and Vdd is the USB+ (5V)
+  float powerMeasure = POWER_PRECISION * analogReadWithinRange(POWER_PIN, 0.0, 5.0) * 5 / POWER_TEST_R; 
 
   // accumulate
   long powerAccumulate = currentPowerIntegral + (int) (powerMeasure * (integrationStep/1000.0));
   
   // write to EEPROM
-  eepromWriteLong(POWER_ADDRESS, powerAccumulate);
-  
-  echoln(powerAccumulate / (float) POWER_PRECISION);
+  if (powerAccumulate > currentPowerIntegral) {
+    eepromWriteLong(POWER_ADDRESS, powerAccumulate);
+    echo(powerAccumulate / (float) POWER_PRECISION); echoln(" J used so far");
+  } else {  // not harvesting
+    echoln("Not harvesting");
+  }
 }

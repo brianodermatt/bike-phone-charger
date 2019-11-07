@@ -1,6 +1,8 @@
 /**
  * Main module. Setup and loop function
  */
+#include "main.h"
+
 int sensorPin = A0;
 int integrationStep = 1000; // time in ms
 

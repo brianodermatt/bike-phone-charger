@@ -2,7 +2,7 @@
  * Logging using the serial channel. Enable/disable by setting the verbose in log.h 
  * Use echo or echoln for logging
  */
-#include "log.h"
+#include "main.h"
 
 void logSetup (void) {
   if (VERBOSE) {

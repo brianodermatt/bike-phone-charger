@@ -1,8 +1,9 @@
 /**
  * This module provides all functions for using the I2C bus (read, write) of the arduino
  */
+#include "main.h"
+
 #include<Wire.h>
-#include "log.h"
 
 void i2cSetup (void) {
   Wire.begin();

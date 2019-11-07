@@ -1,6 +1,8 @@
 /**
  * This module provides all functions for analog (read, write)
  */
+#include "main.h"
+
 #define INPUT_RANGE 1024.0
 
 float analogReadWithinRange(byte pin, float offset, float range) {

@@ -2,7 +2,7 @@
  * Integration over lifetime of: power
  * Uses EEPROM addresses 0,1,2,3
  */
-#include "log.h"
+#include "main.h"
 
 #define POWER_ADDRESS 0 // addr 0 - 3
 #define POWER_PIN A0

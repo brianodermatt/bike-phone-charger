@@ -1,6 +1,8 @@
 /**
  * This module provides all functions for accessing the EEPROM (read, write) of the arduino
  */
+#include "main.h"
+
 #include <EEPROM.h>
 
 /*

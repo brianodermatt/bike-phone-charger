@@ -11,6 +11,7 @@ void setup() {
   logSetup();
   i2cSetup();
   i2cDeviceScan();
+  displaySetup();
   resetIntegration();
 }
 

@@ -8,5 +8,6 @@
 float analogReadWithinRange(byte pin, float offset, float range) {
   int sensorValue = analogRead(pin);
   float sensorNormalised = sensorValue * range / INPUT_RANGE;
+  echo("measure "); echoln(sensorValue);
   return sensorNormalised;
 }

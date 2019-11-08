@@ -3,6 +3,7 @@
  * Uses EEPROM addresses 0,1,2,3
  */
 #include "main.h"
+#include "display.h"
 
 #define POWER_ADDRESS 0 // addr 0 - 3
 #define POWER_PIN A0
@@ -34,7 +35,12 @@ void integrateStep(void) {
   if (powerAccumulate > currentPowerIntegral) {
     eepromWriteLong(POWER_ADDRESS, powerAccumulate);
     echo(powerAccumulate / (float) POWER_PRECISION); echoln(" J used so far");
+    displayPowerIntegral = powerAccumulate / (float) POWER_PRECISION;
+    displayCharging = true;
   } else {  // not harvesting
     echoln("Not harvesting");
+    displayCharging = false;
   }
+
+  displayUpdate();
 }

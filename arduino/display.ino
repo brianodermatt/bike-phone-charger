@@ -23,6 +23,7 @@ bool  displayCharging;
 
 /* initialize the display */
 void displaySetup(void) {
+  echoln("setup display");
   if (!display.begin(SSD1306_SWITCHCAPVCC, DISPLAY_ADDRESS)) {
     echoln("Error during display setup");
     for(;;);  // don't proceed

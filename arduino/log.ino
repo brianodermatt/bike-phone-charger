@@ -3,10 +3,12 @@
  * Use echo or echoln for logging
  */
 #include "main.h"
+#include "log.h"
 
 void logSetup (void) {
   if (VERBOSE) {
     Serial.begin(9600);
     while (!Serial);  // wait for serial monitor
+    echoln("log initialised");
   }
 }

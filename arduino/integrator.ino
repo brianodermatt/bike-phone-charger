@@ -9,6 +9,14 @@
 #define POWER_PIN A0
 #define POWER_PRECISION 16  // 2^4 = 16 possible decimal states of the power. i.e. the value saved is 16 times bigger than the measure
 #define POWER_TEST_R 1  // test resistance of xx Ohm
+
+#define CHARGING_THRESHOLD 1 // if the current measure is below this, consider as not charging.
+
+void integratorSetup() {
+  // pinMode(POWER_PIN, INPUT); // not needed since analogRead does it automatically.
+  pinMode(RESET_PIN, INPUT);
+}
+
 void resetIntegration(void) {
   eepromWriteLong(POWER_ADDRESS, 0.0);
 }
@@ -32,15 +40,15 @@ void integrateStep(void) {
   long powerAccumulate = currentPowerIntegral + (int) (powerMeasure * (integrationStep/1000.0));
   
   // write to EEPROM
-  if (powerAccumulate > currentPowerIntegral) {
+  if (powerAccumulate - currentPowerIntegral > CHARGING_THRESHOLD) {
     eepromWriteLong(POWER_ADDRESS, powerAccumulate);
     echo(powerAccumulate / (float) POWER_PRECISION); echoln(" J used so far");
-    displayPowerIntegral = powerAccumulate / (float) POWER_PRECISION;
     displayCharging = true;
   } else {  // not harvesting
     echoln("Not harvesting");
     displayCharging = false;
   }
-
+  
+  displayPowerIntegral = powerAccumulate / (float) POWER_PRECISION;
   displayUpdate();
 }

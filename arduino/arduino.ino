@@ -3,7 +3,6 @@
  */
 #include "main.h"
 
-int sensorPin = A0;
 int integrationStep = 1000; // time in ms
 
 // setup: is run once, at the beginning
@@ -12,11 +11,15 @@ void setup() {
   i2cSetup();
   i2cDeviceScan();
   displaySetup();
-  resetIntegration();
+  integratorSetup();
 }
 
 // main loop
 void loop() {
   integrateStep();
   delay(integrationStep);
+  if (digitalRead(RESET_PIN) == HIGH) {
+    // reset
+    resetIntegration();
+  }
 }

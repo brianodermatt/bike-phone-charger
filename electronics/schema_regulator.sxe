@@ -4,7 +4,7 @@
 <PrintReportSettings paper_size_enum="9" sheet_size_x="210" sheet_size_y="297" color_bg_even="15727333" color_bg_header="8454143" color_grid="16777215"/>
 <PrinterSettings PaperSizeX="2770" PaperSizeY="1900" PhysicalOffestTenthMm_X="29" PhysicalOffestTenthMm_Y="30"/>
 <tb use="1" name="C:\Users\Public\Documents\ProfiCAD Library\_TB\standard9.ptb"/>
-<PageSettings bgColor="FFFFFF" zoom="150" frame="YES" showT="YES" showV="YES" includeMargins="YES"/>
+<PageSettings bgColor="FFFFFF" zoom="100" frame="YES" showT="YES" showV="YES" includeMargins="YES"/>
 <RefGridSettings FieldSize="50"/>
 <NumberingWire Over="1" Digits="3" TypeRenumbering="0" ShowWireName="0" WireLabelDist_a="4" WireLabelDist_b="10" WireLabelDist_c="7"/>
 <summary>
@@ -624,6 +624,20 @@
 </layer>
 </layers>
 </ppd>
+<ppd name="distribution board\push-button\15x15x31_red.ppd" t="HL" fG="81ee3601-869d-11d9-ac2c-a971d2def4b7" lG="948593f7-2a76-4cbc-9b7e-f485df3165f8">
+<layers current="0">
+<layer name="0" v="1">
+<rect left="-75" top="-75" right="75" bottom="75" op-fd="1" op-fc="0"/>
+<roundRect left="-55" top="-55" right="55" bottom="55" rX="20" rY="20" op-lc="16777215" op-fd="1" op-fc="255"/>
+<outlet x="0" y="-70"/>
+<outlet x="0" y="70"/>
+<polyline op-lc="16777215" pts="56,-56,75,-75,"/>
+<polyline op-lc="16777215" pts="-75,75,-56,56,"/>
+<polyline op-lc="16777215" pts="-55,-55,-75,-75,"/>
+<polyline op-lc="16777215" pts="76,75,57,56,"/>
+</layer>
+</layers>
+</ppd>
 <ppd name="electronics\semiconductors and tubes\transistors\PNP.ppd" t="T" v="BC327" fG="0bed599a-1cb6-4f44-aa62-df052db95f48" lG="9df0db62-21fd-43f3-aca6-6559b420e098">
 <layers current="0">
 <layer name="0" v="1">
@@ -916,16 +930,16 @@
 <wire op-lc="255" pts="788,112,788,198," drop1="1"/>
 <wire op-lc="65535" pts="540,320,540,420,880,420,880,365,"/>
 <wire op-lc="255" pts="540,112,340,112,340,220,60,220," drop1="1"/>
-<text x="730" y="462" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">Overvoltage protection</text>
-<text x="226" y="468" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">Input</text>
+<text x="730" y="462" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">overvoltage protection</text>
+<text x="226" y="468" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">input</text>
 <elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1040" y="380">
 <attributes>
 <attribute name="_ref" value="R4" v="1" al="6" x="1017" y="361"/>
 <attribute name="_type" value="1" v="1" al="6" x="1016" y="391"/>
 </attributes>
 </elem>
-<roundRect left="1300" top="540" right="1600" bottom="720" rX="40" rY="40">
-<text font="100,0,0,0,Tahoma,000000" turns="0">OLED 128*32</text>
+<roundRect left="1300" top="540" right="1560" bottom="720" rX="40" rY="40">
+<text font="80,0,0,0,Tahoma,FF00FF" turns="0">OLED 128*32</text>
 </roundRect>
 <text x="1337" y="660" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SDA</text>
 <text x="1334" y="700" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SCL</text>
@@ -949,7 +963,7 @@ charger</text>
 <wire pts="1260,140,1399,140,"/>
 <wire pts="1399,140,1399,21,1489,21,1489,37,"/>
 <wire pts="1399,240,1399,353,1491,353,1491,337,"/>
-<text x="1396" y="422" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+<text x="1378" y="453" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 5V</text>
 <text x="1036" y="281" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">current
 probe</text>
@@ -957,10 +971,31 @@ probe</text>
 <text x="1200" y="681" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 SDA/SCL</text>
 <wire op-lc="255" pts="1280,240,1280,560,1300,560,"/>
-<wire op-lc="255" pts="1280,440,1360,440," drop1="1"/>
+<wire op-lc="255" pts="1280,400,1520,400," drop1="1"/>
 <wire op-lc="65535" pts="1040,560,1000,560," drop1="1"/>
 <polyline op-lc="65280" end="1" pts="1280,660,1300,660,"/>
 <polyline op-lc="65280" end="1" pts="1280,700,1300,700,"/>
+<elem lG="948593f7-2a76-4cbc-9b7e-f485df3165f8" x="1520" y="442" sX="0.2632" sY="0.2667">
+<attributes>
+<attribute name="_ref" value="HL2" v="0" al="6" x="1419" y="422"/>
+<attribute name="_type" value="" v="0" al="6" x="1419" y="462"/>
+</attributes>
+</elem>
+<wire op-lc="255" pts="1380,400,1380,422," drop1="1"/>
+<wire op-lc="255" pts="1520,400,1520,424,"/>
+<elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1560" y="440">
+<attributes>
+<attribute name="_ref" value="R5" v="1" al="6" x="1618" y="427"/>
+<attribute name="_type" value="12.1K" v="1" al="6" x="1648" y="457"/>
+</attributes>
+</elem>
+<wire op-lc="255" pts="1560,415,1560,400,1520,400," drop2="1"/>
+<wire op-lc="65535" pts="1040,520,1560,520,1560,465," drop1="1"/>
+<wire op-lc="65535" pts="1520,460,1520,520," drop2="1"/>
+<text x="1642" y="524" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+digital</text>
+<wire op-lc="65535" pts="1560,520,1580,520,1579,521," drop1="1"/>
+<text x="1616" y="361" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">reset</text>
 </layer>
 </layers>
 </page>

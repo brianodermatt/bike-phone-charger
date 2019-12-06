@@ -938,16 +938,16 @@
 <attribute name="_type" value="1" v="1" al="6" x="1016" y="391"/>
 </attributes>
 </elem>
-<roundRect left="1300" top="540" right="1560" bottom="720" rX="40" rY="40">
+<roundRect left="1300" top="600" right="1560" bottom="780" rX="40" rY="40">
 <text font="80,0,0,0,Tahoma,FF00FF" turns="0">OLED 128*32</text>
 </roundRect>
-<text x="1337" y="660" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SDA</text>
-<text x="1334" y="700" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SCL</text>
-<text x="1337" y="560" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">VCC</text>
-<text x="1337" y="600" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">GND</text>
+<text x="1337" y="720" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SDA</text>
+<text x="1334" y="760" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SCL</text>
+<text x="1337" y="620" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">VCC</text>
+<text x="1337" y="660" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">GND</text>
 <wire op-lc="65535" pts="60,340,540,340," drop2="1"/>
 <wire op-lc="65535" pts="880,420,1040,420,1040,405," drop1="1"/>
-<wire op-lc="65535" pts="1040,420,1040,600,1300,600," drop1="1"/>
+<wire op-lc="65535" pts="1040,420,1040,660,1300,660," drop1="1"/>
 <text x="941" y="558" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 GND</text>
 <wire op-lc="16737843" pts="1040,355,1040,340,1160,340,"/>
@@ -968,13 +968,13 @@ charger</text>
 <text x="1036" y="281" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">current
 probe</text>
 <wire op-lc="255" pts="1260,140,1260,112,922,112,"/>
-<text x="1200" y="681" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+<text x="1200" y="741" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 SDA/SCL</text>
-<wire op-lc="255" pts="1280,240,1280,560,1300,560,"/>
+<wire op-lc="255" pts="1280,240,1280,620,1300,620,"/>
 <wire op-lc="255" pts="1280,400,1520,400," drop1="1"/>
 <wire op-lc="65535" pts="1040,560,1000,560," drop1="1"/>
-<polyline op-lc="65280" end="1" pts="1280,660,1300,660,"/>
-<polyline op-lc="65280" end="1" pts="1280,700,1300,700,"/>
+<polyline op-lc="65280" end="1" pts="1280,720,1300,720,"/>
+<polyline op-lc="65280" end="1" pts="1280,760,1300,760,"/>
 <elem lG="948593f7-2a76-4cbc-9b7e-f485df3165f8" x="1520" y="442" sX="0.2632" sY="0.2667">
 <attributes>
 <attribute name="_ref" value="HL2" v="0" al="6" x="1419" y="422"/>
@@ -990,12 +990,19 @@ SDA/SCL</text>
 </attributes>
 </elem>
 <wire op-lc="255" pts="1560,415,1560,400,1520,400," drop2="1"/>
-<wire op-lc="65535" pts="1040,520,1560,520,1560,465," drop1="1"/>
-<wire op-lc="65535" pts="1520,460,1520,520," drop2="1"/>
+<wire op-lc="65280" pts="1520,460,1520,520," drop2="1"/>
 <text x="1642" y="524" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 digital</text>
-<wire op-lc="65535" pts="1560,520,1580,520,1579,521," drop1="1"/>
+<wire op-lc="65280" pts="1560,520,1580,520,1579,521," drop1="1"/>
 <text x="1616" y="361" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">reset</text>
+<elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1400" y="520" a="-900">
+<attributes>
+<attribute name="_ref" value="R6" v="1" al="6" x="1391" y="550"/>
+<attribute name="_type" value="120" v="1" al="6" x="1453" y="549"/>
+</attributes>
+</elem>
+<wire op-lc="65535" pts="1040,520,1375,520," drop1="1"/>
+<wire op-lc="65280" pts="1425,520,1560,520,1560,465,"/>
 </layer>
 </layers>
 </page>

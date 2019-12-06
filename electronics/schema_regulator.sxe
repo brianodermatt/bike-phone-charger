@@ -990,10 +990,10 @@ SDA/SCL</text>
 </attributes>
 </elem>
 <wire op-lc="255" pts="1560,415,1560,400,1520,400," drop2="1"/>
-<wire op-lc="65535" pts="1520,460,1520,520," drop2="1"/>
+<wire op-lc="16737843" pts="1520,460,1520,520," drop2="1"/>
 <text x="1642" y="524" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 digital</text>
-<wire op-lc="65535" pts="1560,520,1580,520,1579,521," drop1="1"/>
+<wire op-lc="16737843" pts="1560,520,1580,520,1579,521," drop1="1"/>
 <text x="1616" y="361" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">reset</text>
 <elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1400" y="520" a="-900">
 <attributes>
@@ -1002,7 +1002,7 @@ digital</text>
 </attributes>
 </elem>
 <wire op-lc="65535" pts="1040,520,1375,520," drop1="1"/>
-<wire op-lc="65535" pts="1425,520,1560,520,1560,465,"/>
+<wire op-lc="16737843" pts="1425,520,1560,520,1560,465,"/>
 </layer>
 </layers>
 </page>

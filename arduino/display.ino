@@ -17,6 +17,18 @@
 #define OLED_RESET    -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+/*
+ * Conversion rate J to CO2
+ * https://www.eecabusiness.govt.nz/tools/wood-energy-calculators/co2-emission-calculator/
+ * 0.1 t CO2 / 1 GJ
+ * 100 kg CO2 / 1 GJ
+ * 10^5 g CO2 / 1 GJ
+ * 10^5 g CO2 / 10^9 J
+ * 10^-4 g CO2 / J
+ */
+#define G_CO2_PER_J 1e-4f
+
+
 /* variables to set before displayUpdate() */
 float displayPowerIntegral;
 bool  displayCharging;
@@ -32,19 +44,27 @@ void displaySetup(void) {
 }
 
 /* update power text */
-void displayUpdate(void) {
+void displayUpdate(void) {  
   char str[10];
   sprintf(str, "%d.%02d J used so far", (int)displayPowerIntegral, (int)(displayPowerIntegral*100)%100);
   display.clearDisplay();
-  // display power integral value
-  display.setCursor(0,0);
+
+  // display equivalent Joule
+  long mg_co2 = displayPowerIntegral * 1000 * G_CO2_PER_J;
   display.setTextSize(2);
-  display.print(displayPowerIntegral);
-  display.println(" J");
+  display.setCursor(0, 0);
+  display.print(mg_co2 > 1000 ? mg_co2/1000 : mg_co2);
+  display.print(mg_co2 > 1000 ? " g CO" : " mg CO");
+  display.setTextSize(1);
+  display.println("2");
+  
+  // display power integral value
+  display.setCursor(0,22);
+  display.setTextSize(1);
+  display.print(displayPowerIntegral, 0);
+  display.print(" J ");
 
   // display charging text
-  display.setTextSize(1);
-  display.setCursor(0,20);
   display.println(displayCharging ? "(charging)" : "(pause)");
   
   display.display();

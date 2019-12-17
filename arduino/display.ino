@@ -32,6 +32,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 /* variables to set before displayUpdate() */
 float displayPowerIntegral;
 bool  displayCharging;
+bool  displayResetting;
 
 /* initialize the display */
 void displaySetup(void) {
@@ -45,27 +46,37 @@ void displaySetup(void) {
 
 /* update power text */
 void displayUpdate(void) {  
+  static int i = 0;
   char str[10];
   sprintf(str, "%d.%02d J used so far", (int)displayPowerIntegral, (int)(displayPowerIntegral*100)%100);
   display.clearDisplay();
 
-  // display equivalent Joule
-  long mg_co2 = displayPowerIntegral * 1000 * G_CO2_PER_J;
-  display.setTextSize(2);
-  display.setCursor(0, 0);
-  display.print(mg_co2 > 1000 ? mg_co2/1000 : mg_co2);
-  display.print(mg_co2 > 1000 ? " g CO" : " mg CO");
-  display.setTextSize(1);
-  display.println("2");
-  
-  // display power integral value
-  display.setCursor(0,22);
-  display.setTextSize(1);
-  display.print(displayPowerIntegral, 0);
-  display.print(" J ");
+  if (!displayResetting) {
+    // display equivalent Joule
+    long mg_co2 = displayPowerIntegral * 1000 * G_CO2_PER_J;
+    display.setTextSize(2);
+    display.setCursor(0, 0);
+    display.print(mg_co2 > 1000 ? mg_co2/1000 : mg_co2);
+    display.print(mg_co2 > 1000 ? " g CO" : " mg CO");
+    display.setTextSize(1);
+    display.println("2");
+    
+    // display power integral value
+    display.setCursor(0,22);
+    display.setTextSize(1);
+    display.print(displayPowerIntegral, 0);
+    display.print(" J ");
 
-  // display charging text
-  display.println(displayCharging ? "(charging)" : "(pause)");
-  
+    // display charging text
+    display.println(displayCharging ? "(charging)" : "(pause)");
+  } else {
+    display.setTextSize(2);
+    display.setCursor(0,0);
+    display.println("Resetting");
+    display.setCursor(0,22);
+    display.setTextSize(1);
+    display.println("Hold for 5s");
+  }
+    
   display.display();
 }

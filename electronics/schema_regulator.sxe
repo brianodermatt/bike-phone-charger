@@ -874,15 +874,15 @@
 <layers current="1">
 <layer name="-1" v="1"/>
 <layer name="0" v="1">
-<elem lG="bca18a5a-1f4e-4b5a-8dba-e95f743942c6" x="120" y="277">
+<elem lG="bca18a5a-1f4e-4b5a-8dba-e95f743942c6" x="122" y="279" sY="0.9881">
 <attributes>
-<attribute name="_ref" value="1" v="0" al="6" x="15" y="257"/>
-<attribute name="_type" value="" v="0" al="6" x="15" y="297"/>
-<attribute name="name" value="DC generator" v="1" al="6" x="202" y="364"/>
+<attribute name="_ref" value="1" v="0" al="6" x="17" y="259"/>
+<attribute name="_type" value="" v="0" al="6" x="17" y="299"/>
+<attribute name="name" value="DC generator" v="1" al="6" x="194" y="367"/>
 </attributes>
 </elem>
 <rect left="220" top="220" right="340" bottom="340"/>
-<text x="289" y="363" f="80,0,0,0,Lucida Sans Unicode,FF00FF" l="1" al="9">Boost/Buck</text>
+<text x="285" y="369" f="80,0,0,0,Lucida Sans Unicode,FF00FF" l="1" al="9">Boost/Buck</text>
 <elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="540" y="180">
 <attributes>
 <attribute name="_ref" value="R1" v="1" al="6" x="507" y="160"/>
@@ -930,79 +930,75 @@
 <wire op-lc="255" pts="788,112,788,198," drop1="1"/>
 <wire op-lc="65535" pts="540,320,540,420,880,420,880,365,"/>
 <wire op-lc="255" pts="540,112,340,112,340,220,60,220," drop1="1"/>
-<text x="730" y="462" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">overvoltage protection</text>
-<text x="226" y="468" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">input</text>
+<text x="626" y="462" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">overvoltage protection</text>
+<text x="178" y="462" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">input</text>
 <elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1040" y="380">
 <attributes>
 <attribute name="_ref" value="R4" v="1" al="6" x="1017" y="361"/>
 <attribute name="_type" value="1" v="1" al="6" x="1016" y="391"/>
 </attributes>
 </elem>
-<roundRect left="1300" top="600" right="1560" bottom="780" rX="40" rY="40">
-<text font="80,0,0,0,Tahoma,FF00FF" turns="0">OLED 128*32</text>
-</roundRect>
-<text x="1337" y="720" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SDA</text>
-<text x="1334" y="760" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SCL</text>
-<text x="1337" y="620" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">VCC</text>
-<text x="1337" y="660" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">GND</text>
+<roundRect left="1300" top="608" right="1560" bottom="788" rX="40" rY="40"/>
+<text x="1337" y="728" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SDA</text>
+<text x="1334" y="768" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">SCL</text>
+<text x="1337" y="628" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">VCC</text>
+<text x="1337" y="668" f="80,0,0,0,Lucida Sans Unicode,000000" al="9">GND</text>
 <wire op-lc="65535" pts="60,340,540,340," drop2="1"/>
 <wire op-lc="65535" pts="880,420,1040,420,1040,405," drop1="1"/>
-<wire op-lc="65535" pts="1040,420,1040,660,1300,660," drop1="1"/>
-<text x="941" y="558" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+<wire op-lc="65535" pts="1040,420,1040,668,1300,668," drop1="1"/>
+<text x="941" y="560" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+Camera
+USB
 GND</text>
 <wire op-lc="16737843" pts="1040,355,1040,340,1160,340,"/>
-<wire op-lc="16737843" pts="1160,340,1160,420,1159,416," drop1="1"/>
-<text x="1160" y="460" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+<wire op-lc="16737843" pts="1160,340,1160,380," drop1="1"/>
+<text x="1162" y="404" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 analog</text>
-<rect left="1260" top="140" right="1400" bottom="240"/>
-<text x="1327" y="192" f="80,0,0,0,Lucida Sans Unicode,FF00FF" l="1" al="9">Li-Ion
-charger</text>
+<rect left="1260" top="140" right="1442" bottom="240"/>
+<text x="1351" y="190" f="80,0,0,0,Lucida Sans Unicode,FF00FF" l="1" al="9">PowerBoost
+1000C</text>
 <wire op-lc="16737843" pts="1160,340,1260,340,1260,240,"/>
-<rect left="1459" top="38" right="1519" bottom="338"/>
-<text x="1482" y="198" a="900" f="80,0,0,0,Lucida Sans Unicode,FF00FF" l="1" al="9">Li-Ion cell</text>
+<rect left="1499" top="100" right="1600" bottom="280"/>
+<text x="1552" y="194" f="80,0,0,0,Lucida Sans Unicode,FF00FF" l="1" al="9">Li-Ion 
+cell</text>
 <wire pts="1260,140,1399,140,"/>
-<wire pts="1399,140,1399,21,1489,21,1489,37,"/>
-<wire pts="1399,240,1399,353,1491,353,1491,337,"/>
-<text x="1378" y="453" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+<wire pts="1439,140,1439,80,1530,80,1530,102,"/>
+<wire pts="1439,240,1439,300,1528,300,1528,278,"/>
+<text x="1378" y="413" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+Camera
+USB
 5V</text>
-<text x="1036" y="281" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">current
+<text x="1090" y="285" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">current
 probe</text>
 <wire op-lc="255" pts="1260,140,1260,112,922,112,"/>
-<text x="1200" y="741" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+<text x="1220" y="743" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 SDA/SCL</text>
-<wire op-lc="255" pts="1280,240,1280,620,1300,620,"/>
-<wire op-lc="255" pts="1280,400,1520,400," drop1="1"/>
-<wire op-lc="65535" pts="1040,560,1000,560," drop1="1"/>
-<polyline op-lc="65280" end="1" pts="1280,720,1300,720,"/>
-<polyline op-lc="65280" end="1" pts="1280,760,1300,760,"/>
+<wire op-lc="255" pts="1280,240,1280,628,1300,628,"/>
+<wire op-lc="255" pts="1280,340,1520,340," drop1="1"/>
+<wire op-lc="65535" pts="1040,568,1000,568," drop1="1"/>
+<polyline op-lc="65280" end="1" pts="1280,728,1300,728,"/>
+<polyline op-lc="65280" end="1" pts="1280,768,1300,768,"/>
 <elem lG="948593f7-2a76-4cbc-9b7e-f485df3165f8" x="1520" y="442" sX="0.2632" sY="0.2667">
 <attributes>
 <attribute name="_ref" value="HL2" v="0" al="6" x="1419" y="422"/>
 <attribute name="_type" value="" v="0" al="6" x="1419" y="462"/>
 </attributes>
 </elem>
-<wire op-lc="255" pts="1380,400,1380,422," drop1="1"/>
-<wire op-lc="255" pts="1520,400,1520,424,"/>
-<elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1560" y="440">
-<attributes>
-<attribute name="_ref" value="R5" v="1" al="6" x="1618" y="427"/>
-<attribute name="_type" value="12.1K" v="1" al="6" x="1648" y="457"/>
-</attributes>
-</elem>
-<wire op-lc="255" pts="1560,415,1560,400,1520,400," drop2="1"/>
-<wire op-lc="16737843" pts="1520,460,1520,520," drop2="1"/>
-<text x="1642" y="524" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
+<wire op-lc="255" pts="1380,340,1380,360," drop1="1"/>
+<wire op-lc="255" pts="1520,340,1520,424,"/>
+<wire op-lc="16737843" pts="1520,468,1520,528," drop2="1"/>
+<text x="1622" y="502" f="70,0,0,0,Lucida Sans Unicode,808080" al="9">Arduino
 digital</text>
-<wire op-lc="16737843" pts="1560,520,1580,520,1579,521," drop1="1"/>
-<text x="1616" y="361" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">reset</text>
-<elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1400" y="520" a="-900">
+<text x="1620" y="435" f="110,0,0,0,Lucida Sans Unicode,000000" al="9">reset</text>
+<elem lG="2f9a12a0-0c17-4b74-aafe-7d8c4b646eb0" x="1400" y="528" a="-900">
 <attributes>
-<attribute name="_ref" value="R6" v="1" al="6" x="1391" y="550"/>
-<attribute name="_type" value="120" v="1" al="6" x="1453" y="549"/>
+<attribute name="_ref" value="R6" v="1" al="6" x="1391" y="558"/>
+<attribute name="_type" value="12.1K" v="1" al="6" x="1473" y="557"/>
 </attributes>
 </elem>
-<wire op-lc="65535" pts="1040,520,1375,520," drop1="1"/>
-<wire op-lc="16737843" pts="1425,520,1560,520,1560,465,"/>
+<wire op-lc="65535" pts="1040,528,1375,528," drop1="1"/>
+<wire op-lc="16711680" pts="1425,528,1580,528,"/>
+<text x="1437" y="701" f="80,0,0,0,Lucida Sans Unicode,FF00FF" l="1" al="9">OLED 128*32</text>
 </layer>
 </layers>
 </page>
